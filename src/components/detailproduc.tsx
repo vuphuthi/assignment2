@@ -4,29 +4,31 @@ import { IProduct } from "../../models"
 import { getById } from "../api/product"
 
 const DetailProduct = () =>{
-  const {id} = useParams() 
+  const {_id} = useParams() 
     
   const [product, setProduct] = useState<IProduct>({} as IProduct)
 
-  const fetchProductById = async (id: string) => {
+  const fetchProductById = async (_id: string) => {
       try {
-          const {data} = await getById(id)
+          const {data} = await getById(_id)
           setProduct(data)
+          console.log(data);
+          
       }catch(err) {
 
       }
   }
 
   useEffect(() => {
-      if(id) {
-          fetchProductById(id)
+      if(_id) {
+          fetchProductById(_id)
       }
   }, [])
     return <div>
 <section className="text-gray-700 body-font overflow-hidden bg-white">
   <div className="container px-5 py-10 mx-auto">
     <div className="lg:w-4/5 mx-auto flex flex-wrap">
-        <img src={product.images?.[0].base_url} alt="ecommerce" className="lg:w-1/2 w-full object-cover object-center rounded border border-gray-200"/>
+        <img src={product.image} alt="ecommerce" className="lg:w-1/2 w-full object-cover object-center rounded border border-gray-200"/>
       <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
         <div className="pb-2">
         <span className="title-font font-medium text-[25px] pr-4 text-[#D70018]">{product.price} ₫</span>
@@ -108,8 +110,8 @@ const DetailProduct = () =>{
       </div>
     </div>
     <div className="flex pl-[140px] py-5 gap-3">
-    <img src={product?.images?.[0]?.base_url} alt="" className="w-[70px] rounded-md "/>
-    <img src={product?.images?.[1]?.base_url} alt="" className="w-[70px] rounded-md "/>
+    <img src={product?.image} alt="" className="w-[70px] rounded-md "/>
+    <img src={product?.image} alt="" className="w-[70px] rounded-md "/>
 
 
   </div>

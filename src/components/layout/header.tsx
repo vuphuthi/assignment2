@@ -1,39 +1,158 @@
-import { useLocalStorage } from "./../../pages/hooks"
+import '../../css/bootstrap.min.css'
+import '../../css/elegant-icons.css'
+import '../../css/jquery-ui.min.css'
+import '../../css/font-awesome.min.css'
+import '../../css/nice-select.css'
+import '../../css/owl.carousel.min.css'
+import '../../css/slicknav.min.css'
+import '../../css/style.css'
+
+
+
+
+
 const Header = () =>{
-  const [user, setUser] = useLocalStorage('user', null)
-    return <nav className="bg-[#D70018] border-gray-200 dark:bg-gray-900">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-      <a href="#" className="flex items-center">
-          <img src="/logo.png" className=" ml-[30px] mr-[40px] w-[55px]" alt="Flowbite Logo" />
-      </a>
-      <div className="flex grow">
-        <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search" aria-expanded="false" className="md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-1" >
-          <svg className="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
-          <span className="sr-only">Search</span>
-        </button>
-        <div className="relative hidden md:block grow">
-          <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-            <svg className="w-5 h-5 text-gray-500" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
-            <span className="sr-only">Search icon</span>
-          </div>
-          <input type="text" id="search-navbar" className="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search..." />
-        </div>
-        <button data-collapse-toggle="navbar-search" type="button" className="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-search" aria-expanded="false">
-          <span className="sr-only">Open menu</span>
-          <svg className="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
-        </button>
-      </div>
-      <p className="text-white pl-[30px]">Xin chào: {user && user.lastName}</p>
-        <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-search">
-          <div className="relative mt-3 md:hidden">
-            <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-              <svg className="w-5 h-5 text-gray-500" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
+  
+    return (
+      <div>
+        
+        <header className="header">
+        <div className="header__top">
+            <div className="container">
+                <div className="row">
+                    <div className="col-lg-6 col-md-6">
+                        <div className="header__top__left">
+                            <ul>
+                                <li><i className="fa fa-envelope"></i> hello@colorlib.com</li>
+                                <li>Free Shipping for all Order of $99</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div className="col-lg-6 col-md-6">
+                        <div className="header__top__right">
+                            <div className="header__top__right__social">
+                                <a href="#"><i className="fa fa-facebook"></i></a>
+                                <a href="#"><i className="fa fa-twitter"></i></a>
+                                <a href="#"><i className="fa fa-linkedin"></i></a>
+                                <a href="#"><i className="fa fa-pinterest-p"></i></a>
+                            </div>
+                            <div className="header__top__right__language">
+                                <img src="img/language.png" alt=""/>
+                                <div>English</div>
+                                <span className="arrow_carrot-down"></span>
+                                <ul>
+                                    <li><a href="#">Spanis</a></li>
+                                    <li><a href="#">English</a></li>
+                                </ul>
+                            </div>
+                            <div className="header__top__right__auth">
+                                <a href="#"><i className="fa fa-user"></i> Login</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-                <input type="text" id="search-navbar" className="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search..." />
-          </div>
         </div>
+        <div className="container">
+            <div className="row">
+                <div className="col-lg-3">
+                    <div className="header__logo">
+                        <a href="./index.html"><img src="img/logo.png" alt=""/></a>
+                    </div>
+                </div>
+                <div className="col-lg-6">
+                    <nav className="header__menu">
+                        <ul>
+                            <li className="active"><a href="./index.html">Home</a></li>
+                            <li><a href="./shop-grid.html">Shop</a></li>
+                            <li><a href="#">Pages</a>
+                                <ul className="header__menu__dropdown">
+                                    <li><a href="./shop-details.html">Shop Details</a></li>
+                                    <li><a href="./shoping-cart.html">Shoping Cart</a></li>
+                                    <li><a href="./checkout.html">Check Out</a></li>
+                                    <li><a href="./blog-details.html">Blog Details</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="./blog.html">Blog</a></li>
+                            <li><a href="./contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div className="col-lg-3">
+                    <div className="header__cart">
+                        <ul>
+                            <li><a href="#"><i className="fa fa-heart"></i> <span>1</span></a></li>
+                            <li><a href="#"><i className="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                        </ul>
+                        <div className="header__cart__price">item: <span>$150.00</span></div>
+                    </div>
+                </div>
+            </div>
+            <div className="humberger__open">
+                <i className="fa fa-bars"></i>
+            </div>
+        </div>
+    </header>
+    <section className="hero">
+        <div className="container">
+            <div className="row">
+                <div className="col-lg-3">
+                    <div className="hero__categories">
+                        <div className="hero__categories__all">
+                            <i className="fa fa-bars"></i>
+                            <span>All departments</span>
+                        </div>
+                        <ul>
+                            <li><a href="#">Fresh Meat</a></li>
+                            <li><a href="#">Vegetables</a></li>
+                            <li><a href="#">Fruit & Nut Gifts</a></li>
+                            <li><a href="#">Fresh Berries</a></li>
+                            <li><a href="#">Ocean Foods</a></li>
+                            <li><a href="#">Butter & Eggs</a></li>
+                            <li><a href="#">Fastfood</a></li>
+                            <li><a href="#">Fresh Onion</a></li>
+                            <li><a href="#">Papayaya & Crisps</a></li>
+                            <li><a href="#">Oatmeal</a></li>
+                            <li><a href="#">Fresh Bananas</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div className="col-lg-9">
+                    <div className="hero__search">
+                        <div className="hero__search__form">
+                            <form action="#">
+                                <div className="hero__search__categories">
+                                    All Categories
+                                    <span className="arrow_carrot-down"></span>
+                                </div>
+                                <input type="text" placeholder="What do yo u need?"/>
+                                <button type="submit" className="site-btn">SEARCH</button>
+                            </form>
+                        </div>
+                        <div className="hero__search__phone">
+                            <div className="hero__search__phone__icon">
+                                <i className="fa fa-phone"></i>
+                            </div>
+                            <div className="hero__search__phone__text">
+                                <h5>+65 11.188.888</h5>
+                                <span>support 24/7 time</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="hero__item set-bg" data-setbg="img/banner.jpg">
+                        <div className="hero__text">
+                            <span>FRUIT FRESH</span>
+                            <h2>Vegetable <br />100% Organic</h2>
+                            <p>Free Pickup and Delivery Available</p>
+                            <a href="#" className="primary-btn">SHOP NOW</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
       </div>
-    </nav>
+    )
     
 }
 export default Header

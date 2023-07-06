@@ -1,18 +1,14 @@
 import * as Yup from 'yup'
 
 export interface IProduct {
-    id: string,
+    _id?: string,
     name: string,
     price: number,
     original_price: number,
     description: string,
-    images: {base_url: string}[],
-    brand: {
-        id: number,
-        name: string,
-        slug: string
-    },
-    specifications: ISpecification[]
+    // images: {base_url: string}[],
+    image: string
+    // specifications: ISpecification[]
 }
 
 export interface ISpecification {

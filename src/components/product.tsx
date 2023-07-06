@@ -9,20 +9,20 @@ const Product = ({data}: Props) => {
   
   return ( 
     <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow  dark:bg-gray-800 dark:border-gray-700">
-      <Link to={`product/${data.id}`}>
+      <Link to={`product/${data._id}`}>
         <img
           className="p-8 rounded-t-lg m-auto"
-          src={data.images?.[0].base_url}
+          src={data.image}
           alt="product image"
         />
       </Link>
       <div className="px-5 pb-5">
-        <Link to={`product/${data.id}`}>
+        <Link to={`product/${data._id}`}>
           <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
           {data.name}
           </h5>
         </Link>
-        <div className="flex items-center mt-2.5 mb-5">
+        <div className="flex items-center mt-2.5 mb-5">x
           <svg
             aria-hidden="true"
             className="w-5 h-5 text-yellow-300"

@@ -4,8 +4,8 @@ export const getAll = () =>{
     const uri = "/products"
     return instance.get(uri)
 }
-export const getById = (id: string) => {
-    const uri = "/products/" + id
+export const getById = (_id: string) => {
+    const uri = "/products/" + _id
     return instance.get(uri)
 }
 export const update = (id: string, body: updateForm) => {
